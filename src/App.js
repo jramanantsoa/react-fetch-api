@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 
       //when the compotent is mounted, fetches data from API and copies JSON into state as contacts
       componentDidMount(){
-        fetch('http://jsonplaceholder.typicode.com/users')
+        fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
         .then((data)=>{
           this.setState({contacts : data})
