@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
+import Contact from './components/Contact'
     
     class App extends Component {
       state = {
         contacts:[]
       }
+
+      //when the compotent is mounted, fetches data from API and copies JSON into state as contacts
       componentDidMount(){
         fetch('http://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
@@ -14,13 +17,7 @@ import React, {Component} from 'react';
       }
       render () {
         return (
-          <div className="card">
-            <div className="card-body">
-              <h5 classname="card-title">Steve Jobs</h5>
-              <h6 className="card-subtitle mb-2 text-muted">steve@apple.com</h6>
-              <p className="card-text">Stay Hungry, Stay Foolish</p>
-            </div>
-          </div>
+          <Contact contacts={this.state.contacts} />
         )
       }
     }
